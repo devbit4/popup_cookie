@@ -1,3 +1,60 @@
+// document.cookie="쿠키이름=쿠키값; path=/; expires = 쿠키가 삭제될 날짜";
+
+
+function setCookie(name, val, time) {
+	const today = new Date();
+	const date = today.getDate();
+	today.setDate(date + time);
+
+	const dueDate = today.toGMTString();
+
+	document.cookie = `${name}=${val}; path=/; expires=${dueDate}`;
+}
+
+const popup = document.querySelector('#popup');
+const btnClose = popup.querySelector('.close');
+const del = document.querySelector(".del");
+const view = document.querySelector(".view");
+
+del.addEventListener("click", (e) => {
+	e.preventDefault();
+
+	setCookie("today", "done", 0)
+	popup.style.display = "block"
+})
+
+view.addEventListener("click", (e) => {
+	e.preventDefault();
+	console.log(document.cookie);
+})
+
+
+btnClose.addEventListener('click', (e) => {
+	e.preventDefault();
+
+	let ck = popup.querySelector('input[type=checkbox]');
+	console.log(ck.checked);
+	if (ck.checked === true) {
+		setCookie("today", "done", 1)
+		popup.style.display = 'none';
+	} else {
+		popup.style.display = "none"
+	}
+});
+
+isCookie = document.cookie.indexOf("today=done");
+console.log(isCookie);
+
+if (isCookie == -1) {
+	console.log(document.cookie)
+	console.log("쿠키없음")
+	popup.style.display = "block"
+} else {
+	console.log(isCookie)
+	console.log("쿠키있음")
+	popup.style.display = "none"
+}
+
 // const popup = document.querySelector("#popup");
 // const btnClose = popup.querySelector(".close");
 // const btnDel = document.querySelector(".del");
