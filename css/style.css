@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
 * {
   margin: 0px;
@@ -25,32 +24,44 @@ table {
 input, label {
   vertical-align: middle; }
 
+.del {
+  display: inline-block;
+  padding: 10px 40px;
+  margin: 20px;
+  font: bold 14px/1 'arial';
+  background: linear-gradient(180deg, yellow, lightyellow);
+  border-radius: 5px; }
+
+.view {
+  display: inline-block;
+  padding: 10px 40px;
+  margin: 20px;
+  font: bold 14px/1 'arial';
+  background: linear-gradient(180deg, aqua, white);
+  border-radius: 5px; }
+
 #popup {
-  width: 500px;
-  background: lightblue;
+  background: linear-gradient(45deg, pink, white);
   padding: 40px;
-  box-sizing: border-box;
-  color: #fff;
+  width: 500px;
+  height: 200px;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  border-radius: 15px; }
   #popup .content {
     width: 100%;
-    min-height: 150px; }
-  #popup::after {
-    content: '';
-    display: block;
-    clear: both; }
+    min-height: 50px;
+    color: #fff;
+    font-size: 40px; }
   #popup .wrap {
-    float: left; }
-    #popup .wrap label {
-      font: bold 12px/1 "맑은 고딕";
-      color: #fff;
-      margin-left: 4px; }
+    position: absolute;
+    bottom: 10px;
+    left: 30px; }
   #popup .close {
-    float: right;
-    font: 14px/1 'arial';
-    color: #fff; }
+    position: absolute;
+    right: 30px;
+    bottom: 10px; }
 
 /*# sourceMappingURL=style.css.map */

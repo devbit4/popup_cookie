@@ -1,56 +1,56 @@
-const popup = document.querySelector("#popup");
-const btnClose = popup.querySelector(".close");
-const btnDel = document.querySelector(".del");
-const btnView = document.querySelector(".view");
+// const popup = document.querySelector("#popup");
+// const btnClose = popup.querySelector(".close");
+// const btnDel = document.querySelector(".del");
+// const btnView = document.querySelector(".view");
 
-isCookie = document.cookie.indexOf("popup=done");
-console.log(isCookie);
-let id_name = popup.getAttribute("id");
+// isCookie = document.cookie.indexOf("popup=done");
+// console.log(isCookie);
+// let id_name = popup.getAttribute("id");
 
-if (isCookie === -1) {
-	console.log("쿠키없음");
-	popup.style.display = "block";
-} else {
-	console.log("쿠키있음");
-	popup.style.display = "none";
-}
+// if (isCookie === -1) {
+// 	console.log("쿠키없음");
+// 	popup.style.display = "block";
+// } else {
+// 	console.log("쿠키있음");
+// 	popup.style.display = "none";
+// }
 
-btnClose.addEventListener("click", (e) => {
-	e.preventDefault();
-	let isChecked = popup.querySelector("input[type=checkbox]").checked;
-	console.log(isChecked);
-	let id_name = popup.getAttribute("id");
+// btnClose.addEventListener("click", (e) => {
+// 	e.preventDefault();
+// 	let isChecked = popup.querySelector("input[type=checkbox]").checked;
+// 	console.log(isChecked);
+// 	let id_name = popup.getAttribute("id");
 
-	if (isChecked) {
-		setCookie(id_name, "done", 1);
-		popup.style.display = "none";
-	} else {
-		popup.style.display = "none";
-	}
-});
+// 	if (isChecked) {
+// 		setCookie(id_name, "done", 1);
+// 		popup.style.display = "none";
+// 	} else {
+// 		popup.style.display = "none";
+// 	}
+// });
 
-btnDel.addEventListener("click", (e) => {
-	e.preventDefault();
+// btnDel.addEventListener("click", (e) => {
+// 	e.preventDefault();
 
-	setCookie(id_name, "done", 0);
-	console.log("쿠키 삭제 완료");
-});
+// 	setCookie(id_name, "done", 0);
+// 	console.log("쿠키 삭제 완료");
+// });
 
-btnView.addEventListener("click", (e) => {
-	e.preventDefault();
-	console.log(document.cookie);
-});
+// btnView.addEventListener("click", (e) => {
+// 	e.preventDefault();
+// 	console.log(document.cookie);
+// });
 
-function setCookie(cookieName, cookieValue, time) {
-	let today = new Date();
-	console.log(today);
-	let date = today.getDate();
-	today.setDate(date + time);
+// function setCookie(cookieName, cookieValue, time) {
+// 	let today = new Date();
+// 	console.log(today);
+// 	let date = today.getDate();
+// 	today.setDate(date + time);
 
-	const dueDate = today.toGMTString();
+// 	const dueDate = today.toGMTString();
 
-	document.cookie = `${cookieName}=${cookieValue}; path=/; expires=${dueDate}`;
-}
+// 	document.cookie = `${cookieName}=${cookieValue}; path=/; expires=${dueDate}`;
+// }
 
 /*
 cookie

@@ -1,27 +1,76 @@
-@charset "UTF-8"; 
+@charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
-@import 'reset.scss'; 
+@import 'reset.scss';
 
- 
+
+.del{
+   display: inline-block;
+   padding: 10px 40px;
+   margin: 20px;
+   font: bold 14px/1 'arial';
+   background: linear-gradient(180deg, yellow,lightyellow);
+   border-radius: 5px;
+}
+.view{
+   display: inline-block;
+   padding: 10px 40px;
+   margin: 20px;
+   font: bold 14px/1 'arial';
+   background: linear-gradient(180deg, aqua,white);
+   border-radius: 5px;
+}
+
 #popup{
-   width:500px; 
-   background:lightblue; 
-   padding:40px; 
-   box-sizing:border-box; 
-   color:#fff; 
-   position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); 
-
+   background:linear-gradient(45deg , pink, white);
+   padding: 40px;
+   width: 500px;
+   height: 200px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   border-radius: 15px;
    .content{
-      width:100%; min-height:150px; 
+      width: 100%;
+      min-height: 50px;
+      color: #fff;
+      font-size: 40px;
    }
 
-   &::after{ content:''; display:block; clear:both; }
    .wrap{
-      float:left; 
-
-      label{ font:bold 12px/1 "맑은 고딕"; color:#fff; margin-left:4px; }
+      position: absolute;
+      bottom: 10px;
+      left: 30px;
    }
    .close{
-      float:right; font:14px/1 'arial'; color:#fff; 
+      position: absolute;
+      right: 30px;
+      bottom: 10px;
    }
 }
+
+
+
+
+// #popup{
+//    width:500px;
+//    background:lightblue;
+//    padding:40px;
+//    box-sizing:border-box;
+//    color:#fff;
+//    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+
+//    .content{
+//       width:100%; min-height:150px;
+//    }
+
+//    &::after{ content:''; display:block; clear:both; }
+//    .wrap{
+//       float:left;
+
+//       label{ font:bold 12px/1 "맑은 고딕"; color:#fff; margin-left:4px; }
+//    }
+//    .close{
+//       float:right; font:14px/1 'arial'; color:#fff;
+//    }
+// }
